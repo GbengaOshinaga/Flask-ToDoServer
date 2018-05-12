@@ -10,6 +10,7 @@ Simple API for a to-do application
 ### Getting Started
 >- Clone the repo
 >- Create a MySql database named `todo_db`
+>- Create a `instance\config.py` file which contains settings for flask-sqlalchemy such as SECRET_KEY
 >- Run `export FLASK_ENV=development` in the terminal
 >- Run `flask db migrate`, followed by `flask db upgrade`
 >- Run `flask run`
