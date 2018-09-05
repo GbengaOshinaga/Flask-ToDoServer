@@ -2,8 +2,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from server import db, login_manager
-
+from main import db
 
 class User(db.Model):
     """ User model """
@@ -35,10 +34,6 @@ class User(db.Model):
 
     def __repr__(self):
         return '<User: {}>'.format(self.first_name)
-
-@login_manager.user_loader
-def load_user(user_id):
-    return User.query.get(int(user_id))
 
 
 class Todo(db.Model):
